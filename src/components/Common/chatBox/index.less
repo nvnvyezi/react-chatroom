@@ -1,0 +1,58 @@
+@prefixCls: chatbox;
+
+.direction {
+  direction: rtl;
+}
+.@{prefixCls} {
+  width: 100%;
+  height: auto;
+  // background: red;
+  display: flex;
+  justify-content: flex-start;
+  // align-items: flex-start;
+  margin: 1.5rem 0;
+  // direction: rtl;
+  .@{prefixCls}-img {
+    display: inline-block;
+    // float: left;
+    margin-left: 10px;
+    width: 3.5rem;
+    height: 3.5rem;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      // border-radius: 50%;
+    }
+  }
+  .@{prefixCls}-text {
+    display: inline-block;
+    margin-left: 10px;
+    width: auto;
+    max-width: calc(100% - 8rem);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+      margin: 0 auto;
+      height: auto;
+      padding: .6rem 1rem;
+      font: 400 1.5rem "微软雅黑";
+      color: rgb(50, 51, 51);
+      vertical-align: text-top;
+      word-break: break-all;
+      min-height: 2rem;
+      line-height: 2rem;
+      background: rgb(116, 235, 92);
+      border-radius: 5px;
+    }
+
+    .@{prefixCls}-name {
+      font: 400 1.2rem "微软雅黑";
+      color: rgb(141, 140, 140);
+    }
+  }
+}

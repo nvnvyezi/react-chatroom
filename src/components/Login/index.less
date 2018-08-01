@@ -1,0 +1,58 @@
+@prefixCls: login;
+
+.select {
+  border: 2px solid red;
+}
+
+.@{prefixCls} {
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  .@{prefixCls}-header {
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    font: 400 2rem "微软雅黑";
+  }
+  .@{prefixCls}-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .@{prefixCls}-input {
+      width: auto;
+      border: none;
+      line-height: 3rem;
+      text-indent: 1em;
+    }
+    .@{prefixCls}-btn {
+      width: auto;
+      border: none;
+      line-height: 3rem;
+      padding: 1px 2rem;
+    }
+    .@{prefixCls}-headImg {
+      width: 80%;
+      height: auto;
+      margin: 20px auto;
+      text-align: center;
+      .@{prefixCls}-img {
+        width: 3rem;
+        height: 3rem;
+        margin: 2px 4px 0px 4px;
+      }
+    }
+  }
+  .@{prefixCls}-footer {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font: 400 1rem "微软雅黑";
+  }
+}

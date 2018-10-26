@@ -4,12 +4,10 @@ import ChatBox from "../Common/chatBox/index";
 import io from 'socket.io-client';
 import {withRouter} from "react-router-dom";
 import Toast from '../Common/Toast/Index'
+// import Recorder from "./Voice/recorder";
 
+// let recorder = new Recorder();
 let socket = null;
-let audioCtx = null;
-let sourceNode = null;
-let scriptNode = null;
-let buffers = []
 class Room extends React.Component {
 
   constructor(props) {
@@ -107,49 +105,15 @@ class Room extends React.Component {
     })
   }
   _sound = () => {
-    navigator.mediaDevices.getUserMedia({audio: true, video: false})
-    .then((stream) => {
-      window.AudioContext = window.AudioContext || window.webkitAudioContext;
-      audioCtx = new AudioContext();
-      sourceNode = audioCtx.createMediaStreamSource(stream);
-      // scriptNode = audioCtx.createScriptProcessor();
-      // sourceNode.connect(scriptNode);
-      // scriptNode.connect(audioCtx.destination);
-      sourceNode.connect(audioCtx.destination);
-      // 监听录音的过程
-      // scriptNode.onaudioprocess = event => {
-      //   console.log(34)
-      //   buffers.push(event.inputBuffer.getChannelData(0)); // 获取当前频道的数据，并写入数组
-      // };
-    })
-    .catch(err => {
-      const { name } = err;
-      let errorMessage;
-      switch (name) {
-        // 用户拒绝
-        case 'NotAllowedError':
-        case 'PermissionDeniedError':
-          errorMessage = '用户已禁止网页调用录音设备';
-          break;
-        // 没接入录音设备
-        case 'NotFoundError':
-        case 'DevicesNotFoundError':
-          errorMessage = '录音设备未找到';
-          break;
-        // 其它错误
-        case 'NotSupportedError':
-          errorMessage = '不支持录音功能';
-          break;
-        default:
-          errorMessage = '录音调用错误';
-          window.console.log(err);
-      }
-      return errorMessage;
-    })
+    // recorder.start();
+    // Recorder.get(function (rec) {
+      // recorder = rec;
+      // Recorder.start();
+    // });
   }
   _soundStop = () => {
-    scriptNode.disconnect();
-    console.log(buffers)
+    // scriptNode.disconnect();
+    // console.log(buffers)
   }
 
   render () {
